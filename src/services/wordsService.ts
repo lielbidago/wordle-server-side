@@ -15,10 +15,6 @@ export class wordsService{
         return this.#wordsLst[getRandomInt(this.#wordsLst.length)];
     }
     
-    // isWord(word: string, wordEntered: string):boolean{
-    //     return word===wordEntered;
-    // }
-    
     checkWord(word: string, wordEntered: string):string[]{
         
         let wordColors = wordEntered.split("");
