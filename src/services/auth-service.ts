@@ -1,5 +1,7 @@
 import jwt, { JwtPayload } from 'jsonwebtoken';
 
+//not testable
+
 export const WORDLE_JWT_KEY = 'my secret wordle key';
 
 export function createJWT(data: object): string {

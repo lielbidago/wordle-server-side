@@ -40,7 +40,7 @@ export class wordsService{
     
 }
 
-export function createWordsService(wordsLst:string[]){
+function createWordsService(wordsLst:string[]){
     return new wordsService(wordsLst);
 }
 
