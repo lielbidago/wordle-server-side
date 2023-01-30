@@ -18,7 +18,7 @@ describe('game word feature', () => {
     
         describe('POST /words/check-word', () => {
             
-            it('should return game word decrypted', () => {
+            it('should return game word status array', () => {
                 
                 const gameWordToken = createJWT({word:'APPLE'});
                 const guess = 'APLRE';
@@ -29,6 +29,22 @@ describe('game word feature', () => {
                     .expect(200)
                     .expect((res) => {
                         expect(res.body).to.deep.equal(['green','green','yellow','grey','green']);
+                    });
+                    
+            });
+
+            it('should return ERROR for incorrect word JWT token', () => {
+                
+                const incorrectToken = (createJWT({word:'APPLE'}));
+
+                const guess = 'APLRE';
+
+                return request(wordleServer)
+                    .post('/words/check-word')
+                    .send({GameWord:incorrectToken+'9',guess})
+                    .expect(400)
+                    .expect((res) => {
+                        expect(res.text).to.equal('Incorrect game word token!');
                     });
                     
             });

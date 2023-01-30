@@ -23,7 +23,9 @@ words.post('/check-word',bodyParser.json(),(req:Request, res:Response)=>{
         wordDecypted = word;
 
     }catch(e){
-        console.log(e);
+        // console.log(e);
+        res.status(400).send('Incorrect game word token!');
+        return;
     }
 
     const letterStatusArray = wordsService.checkWord(wordDecypted.toUpperCase(),guess);
