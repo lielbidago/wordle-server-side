@@ -17,7 +17,7 @@ export class wordsService{
     
     checkWord(word: string, wordEntered: string):string[]{
         
-        let wordColors = wordEntered.split("");
+        const wordColors = wordEntered.split("");
         let wordStatus = ['grey','grey','grey','grey','grey'];
         
         wordStatus=wordColors.map((letter:string, index:number)=>{

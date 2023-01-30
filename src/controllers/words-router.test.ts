@@ -1,7 +1,7 @@
 import {wordleServer} from '../server/wordle-server';
 import request from 'supertest';
 import { expect } from 'chai';
-import { createJWT, verifyJWT } from '../services/auth-service';
+import { createJWT } from '../services/auth-service';
 
 describe('game word feature', () => {
 

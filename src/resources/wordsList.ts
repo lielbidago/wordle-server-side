@@ -1,4 +1,3 @@
-
 export const wordsList: string[] = [
     "about",
     "alert",
@@ -74,7 +73,6 @@ export const wordsList: string[] = [
     "worth",
     "visit",
     "would",
-    "vital",
-    "voice",
+    "vital","voice",
   ];
   
